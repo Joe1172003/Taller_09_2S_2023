@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center ">
+<div class="container">
+    <div class="row">
+      <div class="col-100">
+        <div class="card text-white bg-secondary mb-5" style="max-width: 75rem;" >
+        <div class="card-body">
+        <h1 class="card-title">Borrar Usuario</h1>
+        <form [formGroup]="form" (ngSubmit)="enviarCodigo()">
+          <div class="row">
+            <div class="form-floating mb-3">
+              <input class="form-control" placeholder="" type="text" id="username" formControlName="username">
+              <label for="username">Usuario:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-100 flex j-end">
+              <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Eliminar Usuario</button>
+            </div>
+          </div>
+          <div *ngIf="mensaje === '2'" class="mensaje">
+            Mensaje: El usuario no existe
+          </div>
+          <div *ngIf="mensaje === '1'" class="mensaje">
+            Mensaje: Usuario Eliminado Correctamente
+          </div>
+          <div *ngIf="mensaje === '3'" class="mensaje">
+            Mensaje: Error al eliminar el usuario
+          </div>
+        </form>  
+      </div>
+    </div>
+  </div>
+</div>
+

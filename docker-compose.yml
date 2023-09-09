@@ -1,23 +1,24 @@
-version: '3.8'
+version: '3.8' 
+
 services:
-  client:
-    build: ./Client
+  angular:
+    build: ./Frontend  
     ports:
       - "4200:4200" 
     networks:
-      - local  # Nombre de la red personalizada
+      - local
 
-  server:
-    build: ./Server
+  web:
+    build: ./Backend 
     ports:
       - "5000:5000"  
     depends_on:
       - db  
     networks:
-      - local  # Nombre de la red personalizada
+      - local  
 
   db:
-    image: postgres:16rc1-alpine 
+    image: postgres:latest 
     ports:
       - "5435:5435"  
     environment:
@@ -25,11 +26,8 @@ services:
       POSTGRES_USER: postgres   
       POSTGRES_PASSWORD: postgres 
     networks:
-      - local  # Nombre de la red personalizada
+      - local  
 
 networks:
-  local:  # Definición de la red personalizada
+  local: 
 
-
-
-    

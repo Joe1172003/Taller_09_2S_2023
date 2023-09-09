@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  angular:
+    image: jjonk19/prueba-docker-angular:latest  
+    ports:
+      - "4200:4200"
+
+  web:
+    image: jjonk19/prueba-docker-web:latest 
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: usuarios
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+

@@ -1,0 +1,5 @@
+Backend:
+https://hub.docker.com/r/jjonk19/prueba-docker-web
+
+Frontend:
+https://hub.docker.com/r/jjonk19/prueba-docker-angular
